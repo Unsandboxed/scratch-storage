@@ -59,6 +59,29 @@ class ScratchStorage {
     }
 
     /**
+     * Checks if a value is an AssetLike.
+     * @param {unknown} asset The value to check.
+     * @returns {boolean} true if the asset is an AssetLike.
+     */
+    static isAssetLike (asset) {
+        if (!asset) {
+            return false;
+        }
+        const proto = Object.getPrototypeOf(asset);
+        return (
+            (asset instanceof _Asset) || (
+                (
+                    proto &&
+                    proto.decodeText
+                ) && (
+                    asset.dependencies &&
+                    asset.assetType
+                )
+            )
+        );
+    }
+
+    /**
      * @deprecated Please use the `Asset` member of a storage instance instead.
      * @return {Asset} - the `Asset` class constructor.
      * @constructor
