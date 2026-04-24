@@ -59,7 +59,7 @@ class ScratchStorage {
     }
 
     /**
-     * This code was written by "Miyo" for Unsandboxed.
+     * This code was written by "Miyo" for herself to fix a bug in Unsandboxed.
      * This will probably be rewritten in the future.
      *
      * Checks if a value is an AssetLike.
